@@ -6,6 +6,8 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { routes } from './app.routes';
 import { firebaseConfig } from '../environments/environment';
 import { provideHttpClient } from '@angular/common/http';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideToastr } from 'ngx-toastr';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -13,6 +15,8 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
     provideAuth(() => getAuth()),
-    provideHttpClient()
+    provideHttpClient(),
+    provideAnimations(),
+    provideToastr()
   ]
 };

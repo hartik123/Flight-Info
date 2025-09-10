@@ -6,6 +6,7 @@ import { FlightInfoPayload } from '../models';
 import { AuthService } from '../auth/auth.service';
 import { Router } from '@angular/router';
 import { User } from '@angular/fire/auth';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-flight-form',
@@ -28,7 +29,7 @@ export class FlightFormComponent {
 
   user: User | null = null;
 
-  constructor(private router: Router, private http: HttpClient, private auth: AuthService) { }
+  constructor(private router: Router, private http: HttpClient, private auth: AuthService, private toastr: ToastrService) { }
 
   ngOnInit(){
     this.auth.user$.subscribe(u => {
@@ -75,7 +76,8 @@ export class FlightFormComponent {
     this.http.post(url, payload, { headers }).subscribe({
       next: (res) => {
         console.log('Response from server:', res);
-        this.message = 'Flight info submitted successfully!';
+        this.showSuccess('Flight info submitted successfully!');
+        this.message = '';
         this.resetForm();
         this.loading = false;
       },
@@ -90,5 +92,11 @@ export class FlightFormComponent {
   logout() {
     this.auth.logout();
     this.router.navigate(['/login']);
+  }
+
+  showSuccess(message: string) {
+    this.toastr.success(message, '' , {
+      timeOut: 3000,
+    });
   }
 }

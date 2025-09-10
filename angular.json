@@ -41,8 +41,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "maximumWarning": "16kB",
+                  "maximumError": "16kB"
                 }
               ],
               "outputHashing": "all"
@@ -85,8 +85,9 @@
               }
             ],
             "styles": [
+               "node_modules/ngx-toastr/toastr.css",
               "src/styles.css"
-            ],
+              ],
             "scripts": []
           }
         }
