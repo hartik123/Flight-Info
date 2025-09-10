@@ -40,3 +40,9 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+/.vscode/
+/.firebase/
+/.angular/
+/build/
+/src/environments/environment.ts

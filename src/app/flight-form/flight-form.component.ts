@@ -7,6 +7,8 @@ import { AuthService } from '../auth/auth.service';
 import { Router } from '@angular/router';
 import { User } from '@angular/fire/auth';
 import { ToastrService } from 'ngx-toastr';
+import {environment} from "../../environments/environment"
+
 
 @Component({
   selector: 'app-flight-form',
@@ -16,6 +18,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./flight-form.component.css']
 })
 export class FlightFormComponent {
+  name='';
   airline = '';
   arrivalDate = '';
   arrivalTime = '';
@@ -39,6 +42,7 @@ export class FlightFormComponent {
   }
 
   resetForm() {
+    this.name = '';
     this.airline = '';
     this.arrivalDate = '';
     this.arrivalTime = '';
@@ -51,7 +55,7 @@ export class FlightFormComponent {
 
     this.message = '';
     this.error = '';
-    if (!this.airline || !this.arrivalDate || !this.arrivalTime || !this.flightNumber || this.numOfGuests === null) {
+    if (!this.name || !this.airline || !this.arrivalDate || !this.arrivalTime || !this.flightNumber || this.numOfGuests === null) {
       this.error = 'Please fill in all required fields.';
       return;
     }
@@ -59,8 +63,8 @@ export class FlightFormComponent {
     const url = 'https://us-central1-crm-sdk.cloudfunctions.net/flightInfoChallenge';
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'token': 'WW91IG11c3QgYmUgdGhlIGN1cmlvdXMgdHlwZS4gIEJyaW5nIHRoaXMgdXAgYXQgdGhlIGludGVydmlldyBmb3IgYm9udXMgcG9pbnRzICEh',
-      'candidate': 'Hartik Suhagiya'
+      'token': environment.flightApiToken,
+      'candidate': this.name
     });
     const payload: FlightInfoPayload = {
       airline: this.airline,
