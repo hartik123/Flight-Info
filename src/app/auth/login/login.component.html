@@ -1,5 +1,5 @@
 <div class="min-h-screen flex">
-  <!-- Left side: Branding / Illustration -->
+
   <div
     class="hidden md:flex w-1/2 bg-blue-600 text-white items-center justify-center p-10"
   >
@@ -16,14 +16,14 @@
     </div>
   </div>
 
-  <!-- Right side: Login Card -->
+
   <div class="flex w-full md:w-1/2 items-center justify-center bg-gray-50 p-6">
     <div class="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md">
       <!-- Title -->
       <h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">
         Sign In
       </h2>
-      <!-- Email/Password Login -->
+
       <form (ngSubmit)="loginEmail()">
         <input
           [(ngModel)]="email"
@@ -49,14 +49,13 @@
         </button>
       </form>
 
-      <!-- Divider -->
+
       <div class="flex items-center my-6">
         <hr class="flex-grow border-gray-300" />
         <span class="px-2 text-sm text-gray-500">OR</span>
         <hr class="flex-grow border-gray-300" />
       </div>
 
-      <!-- Google Sign In -->
       <button
         (click)="loginGoogle()"
         class="w-full flex items-center justify-center gap-3 bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg shadow-md transition"
