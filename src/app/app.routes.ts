@@ -5,6 +5,6 @@ import { authGuard } from './core/guards/auth.guard';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'form', component: FlightFormComponent, canActivate: [authGuard] },
+  { path: 'flight-form', component: FlightFormComponent, canActivate: [authGuard] },
   { path: '**', redirectTo: 'login' }
 ];
