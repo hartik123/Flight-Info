@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth, user, GoogleAuthProvider, signInWithPopup, signOut, User } from '@angular/fire/auth';
-import { onAuthStateChanged } from 'firebase/auth';
+import { Auth, user, GoogleAuthProvider, signInWithPopup, signOut, User, createUserWithEmailAndPassword, signInWithEmailAndPassword } from '@angular/fire/auth';
 import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
@@ -12,9 +11,19 @@ export class AuthService {
     this.user$ = user(this.auth);
   }
 
-  async login() {
+  async loginWithGoogle() {
     const provider = new GoogleAuthProvider();
     const result = await signInWithPopup(this.auth, provider);
+    return result.user;
+  }
+
+  async signup(email: string, password: string) {
+    const result = await createUserWithEmailAndPassword(this.auth, email, password);
+    return result.user;
+  }
+
+  async loginWithEmail(email: string, password: string) {
+    const result = await signInWithEmailAndPassword(this.auth, email, password);
     return result.user;
   }
 
