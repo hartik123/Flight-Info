@@ -16,12 +16,12 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./flight-form.component.css']
 })
 export class FlightFormComponent {
-  airline = 'American Airlines';
-  arrivalDate = '2025-09-17';
-  arrivalTime = '06:45';
-  flightNumber = '2323';
-  numOfGuests: number | null = 2;
-  comments = 'Fligh testing';
+  airline = '';
+  arrivalDate = '';
+  arrivalTime = '';
+  flightNumber = '';
+  numOfGuests: number | null = null;
+  comments = '';
 
   loading = false;
   message = '';
