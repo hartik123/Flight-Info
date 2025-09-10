@@ -1,8 +1,21 @@
-# FlightInfoApp
+# Flight Information App
 
-FlightInfoApp is a web application that allows users to log in, fill flight information forms, and track submission status. The app supports **Google Authentication** for seamless login and provides an intuitive interface for flight data entry.
+Flight Information App is a web application that allows users to log in, fill flight information forms, and track submission status. The app supports **Google Authentication** for seamless login and provides an intuitive interface for flight data entry.
 
 **Live Website Link:** [Flight Information App Live](https://flight-info-app-57f71.web.app/)
+
+**Demo:**
+
+https://github.com/user-attachments/assets/81266d43-2df3-46db-9cbc-d394c0e56664
+
+---
+
+## Technologies Used
+
+- **Frontend:** Angular
+- **Authentication:** Firebase Authentication (Google Sign-In)
+- **Hosting:** Firebase Hosting
+- **Styling:** Angular, Tailwind CSS
 
 ---
 
@@ -42,17 +55,6 @@ interface FlightInfoPayload {
 }
 ```
 
-
----
-
-## Features
-
-- **User Authentication:** Sign in and sign up with email/password or Google account.
-- **Flight Information Form:** Users can submit detailed flight information.
-- **Form Validation:** Ensures all required fields are correctly filled before submission.
-- **Submission Status:** Users can track the status of their submitted forms.
-- **Responsive UI:** Clean and user-friendly interface for all pages.
-
 ---
 
 ## App Screenshots
@@ -76,14 +78,6 @@ interface FlightInfoPayload {
 ![Form Submission Status](https://github.com/user-attachments/assets/843176eb-b29d-41d6-8b27-092b5fa2b72e)
 
 ---
-
-## Technologies Used
-
-- **Frontend:** Angular
-- **Authentication:** Firebase Authentication (Google Sign-In)
-- **Hosting:** Firebase Hosting
-- **Styling:** Angular, Tailwind CSS
-
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.13.
 
